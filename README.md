@@ -11,6 +11,7 @@
 
 ## Updates
 :triangular_flag_on_post: (2025.09) Our paper has been accepted at NeurIPS 2025!
+
 :triangular_flag_on_post: (2025.05) Our preprint is made available at [ArXiv](https://arxiv.org/abs/2505.23195).
 
 ## Example
