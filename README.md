@@ -1,4 +1,4 @@
-<h2 align="center"> Less is More: Unlocking Specialization of Time Series Foundation Models via Structured Pruning</h2>
+<h1 align="center"> Less is More: Unlocking Specialization of Time Series Foundation Models via Structured Pruning</h1>
 
 <p align="center">
     <a href="https://arxiv.org/abs/2505.23195">
@@ -8,6 +8,8 @@
         />
     </a>
 </p>
+
+> This repo is a preview version and has not been fully tested yet. Feel free to create any issue!
 
 ## Updates
 :triangular_flag_on_post: (2025.09) Our paper has been accepted at NeurIPS 2025!
