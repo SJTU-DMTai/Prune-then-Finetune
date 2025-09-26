@@ -7,6 +7,12 @@
             alt="arxiv"
         />
     </a>
+    <a href="https://img.shields.io/github/stars/SJTU-Quant/LIFT">
+        <img
+            src="https://img.shields.io/github/stars/SJTU-Quant/LIFT"
+            alt="Stars"
+        />
+    </a>
 </p>
 
 > This repo is a preview version and has not been fully tested yet. Feel free to create any issue!
@@ -17,6 +23,8 @@
 :triangular_flag_on_post: (2025.05) Our preprint is made available at [ArXiv](https://arxiv.org/abs/2505.23195).
 
 ## Example
+
+First, all datasets can be download from [Google Drive](https://drive.google.com/drive/folders/1vE0ONyqPlym2JaaAoEe0XNDR8FS_d322?usp=drive_link), and the dataset path can be specified by `--root_path ./dataset/`.
 
 Full Finetune:
 ```bash
