@@ -1,0 +1,40 @@
+if [ ! -d "./logs" ]; then
+    mkdir ./logs
+fi
+
+if [ ! -d "./logs/tsfm/" ]; then
+    mkdir ./logs/tsfm/
+fi
+i=0
+model_name=TimerXL
+seq_len=2880
+for data in $1
+do
+  case $data in
+  ETTh1|ETTh2|ETTm1|ETTm2)
+    dir='ETT-small'
+    data_path=$data.csv;;
+  PEMS03|PEMS04|PEMS07|PEMS08)
+    dir='PEMS'
+    data_path=$data.npz;;
+  *)
+    dir=$data
+    data_path=$data.csv;;
+  esac
+  filename=./logs/tsfm/$data'_'$model_name'_L'$seq_len'_H96_lr{}'.log
+  read lr <<< "$(python src/tsfm/select_hp.py --filename $filename --learning_rate 1e-4 1e-5 1e-6 1e-7 1e-8 1e-9)"
+  for pred_len in 96 192 336 720
+  do
+    CUDA_VISIBLE_DEVICES=$[i+0] python -u src/tsfm/run.py \
+      --root_path ./datasets/$dir/ --data_path $data_path \
+      --model $model_name --task_name forecast \
+      --model_id full_shot_lr$lr \
+      --seq_len $seq_len \
+      --pred_len $pred_len \
+      --do_training 1 --reload True --learning_rate $lr --autoregressive \
+      --batch_size 2048 >> ./logs/tsfm/$data'_'$model_name'_L'$seq_len'_H'$pred_len'_lr'$lr.log 2>&1 &
+  i=$[i+1]
+  [ $i -eq 8 ] && wait
+  i=$[i%8]
+  done
+done

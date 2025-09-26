@@ -1,0 +1,1 @@
+transformers==4.40.1jupytermatplotlibchronos-forecastinguni2tsgranite-tsfm>=0.3.0byted-wandbflash-attn==2.6.3
