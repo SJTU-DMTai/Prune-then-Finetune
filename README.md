@@ -7,12 +7,12 @@
             alt="arxiv"
         />
     </a>
-    <a href="https://img.shields.io/github/stars/SJTU-Quant/LIFT">
+    <!-- <a href="https://img.shields.io/github/stars/SJTU-Quant/Prune-then-Finetune">
         <img
-            src="https://img.shields.io/github/stars/SJTU-Quant/LIFT"
+            src="https://img.shields.io/github/stars/SJTU-Quant/Prune-then-Finetune"
             alt="Stars"
         />
-    </a>
+    </a> -->
 </p>
 
 > This repo is a preview version and has not been fully tested yet. Feel free to create any issue!
